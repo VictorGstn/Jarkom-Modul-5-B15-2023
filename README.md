@@ -397,4 +397,9 @@ iptables -A LOG_DROP -j DROP
 iptables -A INPUT -j LOG_DROP
 iptables -A OUTPUT -j LOG_DROP
 ```
-Perintah akan membuat sebuah chain bernama LOG_DROP. Koneksi yang masuk melalui chain tersebut akan dilakukan log lalu didrop. Dua perintah paling bawah menggunakan contoh penggunaannya. Perintah tersebut akan memasukkan koneksi masuk dan keluar pada LOG_DROP yang nantinya akan dilog dan drop. 
+Perintah akan membuat sebuah chain bernama LOG_DROP. Koneksi yang masuk melalui chain tersebut akan dilakukan log lalu didrop. Dua perintah paling bawah menggunakan contoh penggunaannya. Perintah tersebut akan memasukkan koneksi masuk dan keluar pada LOG_DROP yang nantinya akan dilog dan drop.
+
+## Kendala yang dialami
+- Modul yang diberikan kekurangan banyak perintah basic untuk iptables
+- Log pada nomor 10 masih tidak dapat berjalan walaupun sudah didebug berjam-jam
+- Alternating destination ditengah sesi nc pada nomor 7 tidak bisa jalan sehingga nc perlu diclose dan open terlebih dahulu 
